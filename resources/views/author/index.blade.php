@@ -87,14 +87,16 @@
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $data->name }}</td>
                                             <td>
-                                            <form action="{{route('author.destroy', $data->id)}}" method="post">
+                                            <form action="{{route('author.destroy' ,$data->id)}}" method="post">
                                             @method('delete')
                                             @csrf
 
 
                                             <a href="{{route('author.edit', $data->id)}}" class="btn btn-success float-right">Ubah</a>
                                             <a href="{{route('author.show', $data->id)}}" class="btn btn-warning float-right">Show</a>
-                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus ini?');">Delete</button>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus ini?');">Delete
+                                            </button>
+                                            </form>
                                             </td>
                                         </tr>
                                         @endforeach
